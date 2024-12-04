@@ -34,7 +34,7 @@ cout << "-----------------"<<endl;
   //display population size for each day
  double population=startingSize;
 for(int day=1;day<=days;++day)
-  cout<< day << "\t" << fixed << setprecision(2) << population << endl;
-population+=population*dailyIncrease;
+cout<< day << "\t" << std::fixed << setprecision(2) << population << endl;
+population += population * dailyIncrease;
 return 0;
 }
