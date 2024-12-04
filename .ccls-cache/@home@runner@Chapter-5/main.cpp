@@ -1,17 +1,17 @@
 #include <iostream>
-
+using namespace std;
 int main() { 
 int startingSize;
   double dailyIncrease;
   int days;
   //input size of population
-  do{
+do{
     cout<<"Enter the starting number of organisms: ";
     cin>>startingSize;
     if(startingSize<2)
       cout<<"Error Starting size must be at least 2"<<endl;
   }
-    }while(startingSize<2);
+  while(startingSize<2);
   //input daily increase
 do{
   cout<< "Enter the average daily population increase (as a percentage): ";
@@ -29,12 +29,12 @@ do{
 }while(days<1);
   //calculate population size for each day
 dailyIncrease/=100;
-cout<<"nDay\tPopulation"<<endl;"
-cout<<"-----------------"<<endl;"
+cout << "nDay\tPopulation"<<endl;
+cout << "-----------------"<<endl;
   //display population size for each day
-  double population=startingSize;
+ double population=startingSize;
 for(int day=1;day<=days;++day)
   cout<< day << "\t" << fixed << setprecision(2) << population << endl;
-population+=population*dailyIncrease;}
+population+=population*dailyIncrease;
 return 0;
 }
