@@ -1,46 +1,24 @@
 #include <iostream>
-#include <fstream>
-#include <string>
 using namespace std;
 
 int main() {
-    string townName;
-    string fileName;
-    int year, population;
-
-    cout << "Enter the name of the data file: ";
-    getline(cin, fileName);
-
-    cout << "Enter the name of the town: ";
-    getline(cin, townName);
-
-    cout<< "Enter the name of the data file: ";
-   getline(cin,fileName);
-
-    ifstream dataFile(fileName);
-
-    if (!dataFile){
-        cout << "Error opening file." << fileName << endl;
-        return 1;
-    }
-    // Print the header
-        cout << "\n" << townName << " Population Growth\n";
-        cout << "(Each * represents 1,000 people)\n\n";
-
-        // Read and process the file contents
-        while (dataFile >> year >> population) {
-            // Display the year
-            cout << year << " ";
-
-            // Display the bar chart
-            for (int i = 0; i < population / 1000; i++) {
-                cout << "*";
-            }
-            cout << endl; // Move to the next line
+    // Pattern A
+    cout << "Pattern A\n\n";
+    for (int i = 1; i <= 10; i++) { // Loop from 1 to 10
+        for (int j = 1; j <= i; j++) { // Print '+' for each level
+            cout << "+";
         }
-
-        // Close the file
-        dataFile.close();
-
-        return 0;
+        cout << endl; // Move to the next line
     }
+
+    // Pattern B
+    cout << "\nPattern B\n\n";
+    for (int i = 10; i >= 1; i--) { // Loop from 10 down to 1
+        for (int j = 1; j <= i; j++) { // Print '+' for each level
+            cout << "+";
+        }
+        cout << endl; // Move to the next line
+    }
+
+    return 0;
+}
