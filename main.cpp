@@ -7,7 +7,7 @@ int main() {
     string townName;      // To store the name of the town
     string fileName;      // To store the name of the data file
     int year, population; // To store year and population data
-    ifstream dataFile;    // Object to read data from the file
+    ifstream dataFile ("./People.txt");    // Object to read data from the file
 
     // Ask the user for the name of the town
     cout << "Enter the name of the town: ";
@@ -33,14 +33,13 @@ int main() {
     // Read data from the file line by line
     while (dataFile >> year >> population) {
         // Print the year and a bar chart of asterisks
-        cout << year << " ";  // Print the year
+        cout << year << " ";  
         for (int i = 0; i < population / 1000; ++i) {
             cout << "*";  // Print one asterisk for every 1,000 people
         }
-        cout << endl;  // Move to the next line after each year
+        cout << endl; 
     }
 
-    // Close the file after reading the data
     dataFile.close();
 
     return 0; // Indicate successful program execution
